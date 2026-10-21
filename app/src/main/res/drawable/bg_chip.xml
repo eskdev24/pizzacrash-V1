@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Small rounded chip background (coin counters, badges). -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <solid android:color="@color/cream" />
+    <corners android:radius="999dp" />
+    <stroke android:width="2dp" android:color="@color/panel_stroke" />
+</shape>

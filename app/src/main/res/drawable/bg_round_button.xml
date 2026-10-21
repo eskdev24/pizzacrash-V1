@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generic rounded button surface used by icon buttons in top bars. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="16dp" />
+            <solid android:color="#33000000" />
+        </shape>
+    </item>
+    <item bottom="2dp" right="1dp">
+        <shape android:shape="rectangle">
+            <corners android:radius="16dp" />
+            <solid android:color="@color/panel_bg" />
+            <stroke android:width="2dp" android:color="@color/panel_stroke" />
+        </shape>
+    </item>
+</layer-list>

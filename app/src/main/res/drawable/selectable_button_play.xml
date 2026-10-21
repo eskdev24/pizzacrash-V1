@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Selector for the big PLAY button (pressed state shifts the face down over its 3D base). -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <layer-list>
+            <item>
+                <shape android:shape="rectangle">
+                    <solid android:color="@color/btn_play_green_dark" />
+                    <corners android:radius="28dp" />
+                </shape>
+            </item>
+            <item android:bottom="2dp">
+                <shape android:shape="rectangle">
+                    <gradient android:type="linear" android:angle="90"
+                        android:startColor="#FF468F26" android:endColor="#FF6DB845" />
+                    <corners android:radius="28dp" />
+                    <stroke android:width="2dp" android:color="#FFFFFFFF" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+    <item android:drawable="@drawable/bg_button_play" />
+</selector>

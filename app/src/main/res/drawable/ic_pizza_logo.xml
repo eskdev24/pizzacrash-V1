@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Original vector pizza logo tile for the home screen (PizzaCrash identity, no third-party art). -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="96"
+    android:viewportHeight="96">
+    <!-- crust wedge -->
+    <path android:fillColor="#FFF5B942" android:pathData="M48,6 L86,78 Q48,92 10,78 Z" />
+    <!-- crust rim -->
+    <path android:fillColor="#FFC98A2B" android:pathData="M10,78 Q48,92 86,78 L82,86 Q48,98 14,86 Z" />
+    <!-- sauce -->
+    <path android:fillColor="#FFE43C33" android:pathData="M48,16 L78,74 Q48,85 18,74 Z" />
+    <!-- cheese -->
+    <path android:fillColor="#FFFFD54F" android:pathData="M48,24 L71,70 Q48,79 25,70 Z" />
+    <!-- pepperoni -->
+    <path android:fillColor="#FFB32A24" android:pathData="M48,36m-7,7a7,7 0 1,1 14,0a7,7 0 1,1 -14,0" />
+    <path android:fillColor="#FFB32A24" android:pathData="M34,58m-6,6a6,6 0 1,1 12,0a6,6 0 1,1 -12,0" />
+    <path android:fillColor="#FFB32A24" android:pathData="M62,58m-6,6a6,6 0 1,1 12,0a6,6 0 1,1 -12,0" />
+    <!-- basil -->
+    <path android:fillColor="#FF4CAF50" android:pathData="M48,56m-4,4a4,4 0 1,1 8,0a4,4 0 1,1 -8,0" />
+    <path android:fillColor="#FF4CAF50" android:pathData="M44,42m-3,3a3,3 0 1,1 6,0a3,3 0 1,1 -6,0" />
+    <!-- gloss highlight -->
+    <path android:fillColor="#33FFFFFF" android:pathData="M48,16 L60,44 Q48,40 40,46 Z" />
+</vector>

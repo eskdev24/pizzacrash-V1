@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Home screen sky backdrop: bright blue at top fading to warm cream near the horizon. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:type="linear"
+                android:angle="270"
+                android:startColor="#FF0083F7"
+                android:centerColor="#FF55B4F0"
+                android:endColor="#FFFDF3DD"
+                android:centerY="0.62" />
+        </shape>
+    </item>
+</layer-list>

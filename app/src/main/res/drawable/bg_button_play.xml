@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Big glossy PLAY button: green face with a darker 3D base, like premium casual-game UIs. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- shadow / 3D base -->
+    <item android:top="6dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/btn_play_green_dark" />
+            <corners android:radius="28dp" />
+        </shape>
+    </item>
+    <!-- face with vertical gloss gradient -->
+    <item android:bottom="4dp">
+        <shape android:shape="rectangle">
+            <gradient
+                android:type="linear"
+                android:angle="90"
+                android:startColor="#FF4EA02A"
+                android:endColor="#FF7CCB4F" />
+            <corners android:radius="28dp" />
+            <stroke android:width="2dp" android:color="#FFFFFFFF" />
+        </shape>
+    </item>
+</layer-list>

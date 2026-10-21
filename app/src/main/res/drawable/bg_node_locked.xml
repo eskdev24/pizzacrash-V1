@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Locked level node: flat grey circle, muted ring. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="oval">
+    <solid android:color="#E4DCD1" />
+    <stroke android:width="3dp" android:color="@color/locked_grey" />
+</shape>

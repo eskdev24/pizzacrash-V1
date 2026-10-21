@@ -1,8 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!-- Template palette (preserved) -->
+    <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
-    <color name="ic_launcher_background">#FF6200EE</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="ic_launcher_background">#3DDC84</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- ============ PizzaCrash design tokens ============ -->
+    <!-- Brand -->
+    <color name="pizza_red">#E43C33</color>
+    <color name="pizza_red_dark">#B32A24</color>
+    <color name="crust_gold">#F5B942</color>
+    <color name="crust_gold_dark">#C98A2B</color>
+    <color name="tomato">#E8503A</color>
+    <color name="basil_green">#4CAF50</color>
+    <color name="olive">#6B8E23</color>
+    <color name="cheese">#FFD54F</color>
+    <color name="mushroom">#A1887F</color>
+    <color name="onion_purple">#9575CD</color>
+    <color name="pepper_yellow">#FFC94D</color>
+
+    <!-- Surfaces & panels -->
+    <color name="cream">#FFF6E3</color>
+    <color name="panel_bg">#FFFFFF</color>
+    <color name="panel_stroke">#EADFC8</color>
+    <color name="board_bg">#FFE9C7</color>
+    <color name="tile_bg">#FFFFFF</color>
+
+    <!-- Text -->
+    <color name="text_primary">#3E2B1F</color>
+    <color name="text_secondary">#8A7666</color>
+    <color name="text_on_primary">#FFFFFF</color>
+
+    <!-- Feedback / economy -->
+    <color name="success_green">#43A047</color>
+    <color name="star_amber">#FFC53D</color>
+    <color name="coin_gold">#F2B233</color>
+    <color name="locked_grey">#B9B2AA</color>
+    <color name="scrim">#99000000</color>
+    <!-- Home screen scene (from home.png reference) -->
+    <color name="home_sky_top">#FF0083F7</color>
+    <color name="home_sky_mid">#FF55B4F0</color>
+    <color name="home_horizon">#FFFDF3DD</color>
+    <color name="home_grass_top">#FF6CC455</color>
+    <color name="home_grass_bottom">#FF3C8F2E</color>
+    <color name="btn_play_green">#FF5BB432</color>
+    <color name="btn_play_green_dark">#FF3E8A1E</color>
+    <color name="chip_bg">#FFFFFFFF</color>
+
+
+    <!-- ===== Per-world map theme colors (WorldTheme) ===== -->
+    <color name="w1_sky">#FFD9A8</color> <color name="w1_ground">#8BC34A</color> <color name="w1_accent">#E64A2E</color>
+    <color name="w2_sky">#FFE3C2</color> <color name="w2_ground">#7CB342</color> <color name="w2_accent">#8D6E63</color>
+    <color name="w3_sky">#FFE0B2</color> <color name="w3_ground">#E6B981</color> <color name="w3_accent">#F57C00</color>
+    <color name="w4_sky">#B3E5FC</color> <color name="w4_ground">#26C6DA</color> <color name="w4_accent">#0288D1</color>
+    <color name="w5_sky">#E1F5FE</color> <color name="w5_ground">#F5F5F5</color> <color name="w5_accent">#5C6BC0</color>
+    <color name="w6_sky">#5C6BC0</color> <color name="w6_ground">#37474F</color> <color name="w6_accent">#FFCA28</color>
+    <color name="w7_sky">#B2EBF2</color> <color name="w7_ground">#66BB6A</color> <color name="w7_accent">#00897B</color>
+    <color name="w8_sky">#4E342E</color> <color name="w8_ground">#BF360C</color> <color name="w8_accent">#FF7043</color>
+    <color name="w9_sky">#F8BBD0</color> <color name="w9_ground">#CE93D8</color> <color name="w9_accent">#EC407A</color>
+    <color name="w10_sky">#FFF9C4</color> <color name="w10_ground">#F5B942</color> <color name="w10_accent">#C98A2B</color>
 </resources>

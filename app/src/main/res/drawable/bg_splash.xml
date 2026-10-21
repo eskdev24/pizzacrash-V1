@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Splash window background: warm red with a soft radial-style center band. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/pizza_red" />
+        </shape>
+    </item>
+    <item android:gravity="center">
+        <shape android:shape="oval">
+            <size android:width="420dp" android:height="420dp" />
+            <solid android:color="@color/pizza_red_dark" />
+        </shape>
+    </item>
+</layer-list>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Onboarding page 1: three matched pepperoni tiles + one tapping finger hint. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp" android:height="120dp"
+    android:viewportWidth="120" android:viewportHeight="120">
+    <!-- tile 1 -->
+    <path android:pathData="M14,34 h30 a6,6 0 0 1 6,6 v30 a6,6 0 0 1 -6,6 h-30 a6,6 0 0 1 -6,-6 v-30 a6,6 0 0 1 6,-6z" android:fillColor="#FFF3E0"/>
+    <path android:pathData="M29,55 m-9,0 a9,9 0 1,1 18,0 a9,9 0 1,1 -18,0" android:fillColor="#E64A2E"/>
+    <path android:pathData="M25,51 m-2,0 a2,2 0 1,1 4,0 a2,2 0 1,1 -4,0" android:fillColor="#FF8A65"/>
+    <!-- tile 2 -->
+    <path android:pathData="M45,34 h30 a6,6 0 0 1 6,6 v30 a6,6 0 0 1 -6,6 h-30 a6,6 0 0 1 -6,-6 v-30 a6,6 0 0 1 6,-6z" android:fillColor="#FFF3E0"/>
+    <path android:pathData="M60,55 m-9,0 a9,9 0 1,1 18,0 a9,9 0 1,1 -18,0" android:fillColor="#E64A2E"/>
+    <path android:pathData="M56,51 m-2,0 a2,2 0 1,1 4,0 a2,2 0 1,1 -4,0" android:fillColor="#FF8A65"/>
+    <!-- tile 3 -->
+    <path android:pathData="M76,34 h30 a6,6 0 0 1 6,6 v30 a6,6 0 0 1 -6,6 h-30 a6,6 0 0 1 -6,-6 v-30 a6,6 0 0 1 6,-6z" android:fillColor="#FFF3E0"/>
+    <path android:pathData="M91,55 m-9,0 a9,9 0 1,1 18,0 a9,9 0 1,1 -18,0" android:fillColor="#E64A2E"/>
+    <path android:pathData="M87,51 m-2,0 a2,2 0 1,1 4,0 a2,2 0 1,1 -4,0" android:fillColor="#FF8A65"/>
+    <!-- swap arrow -->
+    <path android:pathData="M30,24 Q60,6 92,22" android:strokeColor="#F5B942" android:strokeWidth="5" android:strokeLineCap="round" android:fillColor="#00000000"/>
+    <path android:pathData="M86,14 L96,23 L83,28 Z" android:fillColor="#F5B942"/>
+    <!-- sparkle -->
+    <path android:pathData="M60,96 l3,7 7,3 -7,3 -3,7 -3,-7 -7,-3 7,-3 z" android:fillColor="#F5B942"/>
+</vector>

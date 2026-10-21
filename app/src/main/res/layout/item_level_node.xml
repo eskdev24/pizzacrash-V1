@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Per-level node: circle background + number + 3 small stars (or lock icon). -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+
+    <FrameLayout
+        android:id="@+id/node_circle"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:background="@drawable/bg_node_open">
+
+        <TextView
+            android:id="@+id/node_number"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@color/text_primary"
+            android:contentDescription="@null"
+            tools:ignore="MissingPrefix"
+            xmlns:tools="http://schemas.android.com/tools" />
+
+        <ImageView
+            android:id="@+id/node_lock"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_lock_small"
+            android:contentDescription="@string/label_locked"
+            android:visibility="gone" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/node_stars"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="2dp">
+
+        <ImageView
+            android:id="@+id/node_star_1"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:src="@drawable/ic_star_empty"
+            android:contentDescription="@null" />
+
+        <ImageView
+            android:id="@+id/node_star_2"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_marginStart="2dp"
+            android:src="@drawable/ic_star_empty"
+            android:contentDescription="@null" />
+
+        <ImageView
+            android:id="@+id/node_star_3"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_marginStart="2dp"
+            android:src="@drawable/ic_star_empty"
+            android:contentDescription="@null" />
+    </LinearLayout>
+</LinearLayout>

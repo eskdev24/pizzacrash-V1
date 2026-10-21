@@ -1,10 +1,35 @@
 <resources>
-    <style name="Theme.MyApplication" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <!-- Original template theme (preserved for MainActivity) -->
+    <style name="Theme.PizzaCrash.Template" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/white</item>
         <item name="colorSecondary">@color/teal_200</item>
         <item name="colorSecondaryVariant">@color/teal_200</item>
         <item name="colorOnSecondary">@color/black</item>
+    </style>
+
+    <!-- ============ PizzaCrash game themes ============ -->
+    <!-- Base game theme: no action bar, brand palette. -->
+    <style name="Theme.PizzaCrash" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/pizza_red</item>
+        <item name="colorPrimaryVariant">@color/pizza_red_dark</item>
+        <item name="colorOnPrimary">@color/text_on_primary</item>
+        <item name="colorSecondary">@color/crust_gold</item>
+        <item name="colorSecondaryVariant">@color/crust_gold_dark</item>
+        <item name="colorOnSecondary">@color/text_primary</item>
+        <item name="android:colorBackground">@color/cream</item>
+        <item name="android:statusBarColor">@color/pizza_red_dark</item>
+        <item name="android:navigationBarColor">@color/pizza_red_dark</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+    </style>
+
+    <!-- Splash: full-screen branded loading surface. -->
+    <style name="Theme.PizzaCrash.Splash" parent="Theme.PizzaCrash">
+        <item name="android:windowBackground">@drawable/bg_splash</item>
+        <item name="android:statusBarColor">@color/pizza_red</item>
+        <item name="android:navigationBarColor">@color/pizza_red</item>
     </style>
 </resources>

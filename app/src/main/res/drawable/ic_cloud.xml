@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Simple fluffy cloud decoration (original artwork, vector). -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="96dp"
+    android:height="44dp"
+    android:viewportWidth="96"
+    android:viewportHeight="44">
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M24,44 A14,14 0 1 1 26,17 A18,18 0 1 1 60,14 A13,13 0 1 1 74,40 A10,10 0 0 1 70,44 Z" />
+</vector>

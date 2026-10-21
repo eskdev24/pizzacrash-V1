@@ -1,4 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">PizzaCrash</string>
+
+    <!-- World names (index = world number) -->
+    <string name="world_1">Pizza Town</string>
+    <string name="world_2">Italian Village</string>
+    <string name="world_3">Desert Oasis</string>
+    <string name="world_4">Ocean Bay</string>
+    <string name="world_5">Snowy Mountains</string>
+    <string name="world_6">City Skyline</string>
+    <string name="world_7">Tropical Island</string>
+    <string name="world_8">Volcano Land</string>
+    <string name="world_9">Candy Forest</string>
+    <string name="world_10">Pizza Kingdom</string>
+
+    <!-- Common UI -->
+    <string name="action_play">Play</string>
+    <string name="action_continue">Continue</string>
+    <string name="action_back">Back</string>
+    <string name="action_close">Close</string>
+    <string name="label_level">Level %1$d</string>
+    <string name="label_world">World %1$d</string>
     <string name="hello_world">Hello World!</string>
+    <string name="home_tagline">Match. Bake. Crash!</string>
+    <string name="action_shop">Shop</string>
+    <string name="action_daily_reward">Daily reward</string>
+    <string name="action_settings">Settings</string>
+    <string name="cd_coins">Coin balance</string>
+
+    <!-- World map -->
+    <string name="action_prev_world">◀ Prev world</string>
+    <string name="action_next_world">Next world ▶</string>
+    <string name="label_star_progress">%1$d / %2$d stars</string>
+    <string name="cd_level_node">Level %1$d of World %2$d</string>
+    <string name="label_locked">Locked</string>
+
+    <!-- Level intro -->
+    <string name="label_best_score">Best score: %1$d</string>
+    <string name="label_objective_pending">Objective details arrive with the gameplay board (Phase 3)</string>
+    <string name="toast_level_locked">This level is still locked</string>
+    <string name="toast_gameplay_pending">Gameplay board arrives in Phase 3 — not built yet</string>
+
+    <!-- Settings -->
+    <string name="title_settings">Settings</string>
+    <string name="title_your_progress">Your progress</string>
+    <string name="label_sound_effects">Sound effects</string>
+    <string name="label_music">Music</string>
+    <string name="label_haptics">Vibration</string>
+    <string name="label_version">PizzaCrash v0.1 (development build)</string>
+
+    <!-- Shop -->
+    <string name="title_shop">Shop</string>
+    <string name="booster_hammer">Hammer</string>
+    <string name="booster_bomb">Bomb</string>
+    <string name="booster_swap">Swap</string>
+    <string name="booster_rainbow">Rainbow</string>
+    <string name="shop_starter_pack">Starter Pack (Hammer + Bomb + Swap)</string>
+    <string name="label_buy_item">%1$s — %2$d coins</string>
+    <string name="toast_not_enough_coins">Not enough coins!</string>
+    <string name="toast_purchase_ok">Purchase complete!</string>
+
+    <!-- Daily reward -->
+    <string name="title_daily_reward">Daily Reward</string>
+    <string name="label_daily_reward_desc">Claim 50 coins every day. Every 3-day streak also grants a Hammer booster.</string>
+    <string name="label_streak">Streak: %1$d day(s)</string>
+    <string name="action_claim">Claim reward</string>
+    <string name="action_claimed_today">Claimed today</string>
+    <string name="toast_daily_claimed">Reward claimed! +50 coins</string>
+
+    <!-- Onboarding -->
+    <string name="onboard_1_title">Match the Ingredients!</string>
+    <string name="onboard_1_body">Swap tomatoes, cheese, pepperoni and more to make matches of three or more.</string>
+    <string name="onboard_2_title">Complete Objectives</string>
+    <string name="onboard_2_body">Collect the ingredients and reach the target before you run out of moves to earn stars.</string>
+    <string name="onboard_3_title">Use Boosters &amp; Win</string>
+    <string name="onboard_3_body">Hammer, Bomb, Swap and Rainbow boosters help you crash through the toughest levels.</string>
+    <string name="action_skip">Skip</string>
+    <string name="action_next">Next</string>
+    <string name="action_get_playing">Get Playing</string>
+    <string name="label_page_of_pages">%1$d/%2$d</string>
+
+    <!-- Gameplay / results -->
+    <string name="game_score_fmt">Score %1$d</string>
+    <string name="game_moves_fmt">Moves %1$d</string>
+    <string name="cd_pause">Pause</string>
+    <string name="title_paused">Paused</string>
+    <string name="action_resume">Resume</string>
+    <string name="action_restart">Restart</string>
+    <string name="action_quit">Quit</string>
+    <string name="action_retry">Retry</string>
+    <string name="action_home">Home</string>
+    <string name="title_level_complete">Level Complete!</string>
+    <string name="title_out_of_moves">Out of Moves</string>
+    <string name="message_try_again">So close! Give it another shot.</string>
+    <string name="label_coins_earned">+%1$d coins</string>
+    <string name="hint_button">Hint</string>
+    <string name="boost_select_target">Tap a tile to target</string>
+    <string name="boost_select_two">Tap two tiles to swap them</string>
+    <string name="boost_none_left">No boosters left — visit the shop!</string>
+    <string name="action_profile">Profile</string>
+    <string name="profile_title">Chef Profile</string>
+    <string name="profile_display_name">Display name</string>
+    <string name="profile_save">Save name</string>
+    <string name="profile_name_hint">Your chef name</string>
+    <string name="profile_stats_title">Progress</string>
+    <string name="profile_total_stars">Total stars</string>
+    <string name="profile_levels_completed">Levels completed</string>
+    <string name="profile_coins">Coins</string>
+    <string name="profile_current_world">Current world</string>
+    <string name="profile_member_since">Player since</string>
+    <string name="profile_name_saved">Name saved</string>
+    <string name="profile_since_prefix">Player since %1$s</string>
+    <string name="map_world_fallback">World %1$d</string>
 </resources>

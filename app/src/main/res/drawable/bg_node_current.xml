@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Current level node: highlighted red circle with golden ring. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="@color/pizza_red_dark" />
+        </shape>
+    </item>
+    <item bottom="3dp" right="2dp">
+        <shape android:shape="oval">
+            <solid android:color="@color/pizza_red" />
+            <stroke android:width="4dp" android:color="@color/crust_gold" />
+        </shape>
+    </item>
+</layer-list>

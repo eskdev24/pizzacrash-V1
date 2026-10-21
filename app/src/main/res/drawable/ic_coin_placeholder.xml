@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Temporary coin token; replaced by final artwork per UI references. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp" android:height="24dp"
+    android:viewportWidth="24" android:viewportHeight="24">
+    <path android:fillColor="#F2B233" android:pathData="M12,2 A10,10 0 1,0 12,22 A10,10 0 1,0 12,2 Z"/>
+    <path android:fillColor="#C98A2B" android:pathData="M12,5 A7,7 0 1,0 12,19 A7,7 0 1,0 12,5 Z"/>
+    <path android:fillColor="#FFD54F" android:pathData="M12,7 A5,5 0 1,0 12,17 A5,5 0 1,0 12,7 Z"/>
+</vector>
