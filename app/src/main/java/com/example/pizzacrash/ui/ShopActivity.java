@@ -9,6 +9,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.pizzacrash.R;
+import com.example.pizzacrash.audio.AudioManager;
 import com.example.pizzacrash.data.SaveRepository;
 import com.google.android.material.button.MaterialButton;
 
@@ -64,9 +65,11 @@ public class ShopActivity extends AppCompatActivity {
 
     private void buy(ShopItem item) {
         if (!save.spendCoins(item.price)) {
+            AudioManager.get(this).hapticTap(getWindow().getDecorView());
             Toast.makeText(this, R.string.toast_not_enough_coins, Toast.LENGTH_SHORT).show();
             return;
         }
+        AudioManager.get(this).playEffect(AudioManager.SFX_COIN);
         // For the starter pack grant multiple boosters; singles grant one each.
         if ("starter_pack".equals(item.id)) {
             save.addBoosters("hammer", 1);

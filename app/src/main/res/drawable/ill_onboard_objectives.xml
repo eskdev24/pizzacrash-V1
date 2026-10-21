@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Onboarding page 2: objective checklist panel with stars. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp" android:height="120dp"
+    android:viewportWidth="120" android:viewportHeight="120">
+    <path android:pathData="M22,18 h76 a8,8 0 0 1 8,8 v68 a8,8 0 0 1 -8,8 h-76 a8,8 0 0 1 -8,-8 v-68 a8,8 0 0 1 8,-8z" android:fillColor="#FFFFFF"/>
+    <path android:pathData="M22,18 h76 a8,8 0 0 1 8,8 v68 a8,8 0 0 1 -8,8 h-76 a8,8 0 0 1 -8,-8 v-68 a8,8 0 0 1 8,-8z" android:strokeColor="#C98A2B" android:strokeWidth="3" android:fillColor="#00000000"/>
+    <!-- tomato icon row -->
+    <path android:pathData="M32,40 m-7,0 a7,7 0 1,1 14,0 a7,7 0 1,1 -14,0" android:fillColor="#E53935"/>
+    <path android:pathData="M46,36 h30 v8 h-30 z" android:fillColor="#FFCCBC"/>
+    <path android:pathData="M82,36 l4,4 8,-8 v14 h-12 z" android:fillColor="#66BB6A"/>
+    <!-- cheese row -->
+    <path android:pathData="M26,62 l12,-6 v12 z" android:fillColor="#FDD835"/>
+    <path android:pathData="M46,58 h30 v8 h-30 z" android:fillColor="#FFF59D"/>
+    <path android:pathData="M82,58 l4,4 8,-8 v14 h-12 z" android:fillColor="#66BB6A"/>
+    <!-- star meter -->
+    <path android:pathData="M40,88 m-6,0 a6,6 0 1,1 12,0 a6,6 0 1,1 -12,0" android:fillColor="#F5B942"/>
+    <path android:pathData="M60,88 m-6,0 a6,6 0 1,1 12,0 a6,6 0 1,1 -12,0" android:fillColor="#F5B942"/>
+    <path android:pathData="M80,88 m-6,0 a6,6 0 1,1 12,0 a6,6 0 1,1 -12,0" android:fillColor="#E0E0E0"/>
+</vector>

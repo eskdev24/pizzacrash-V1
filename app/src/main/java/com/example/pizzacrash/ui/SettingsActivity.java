@@ -7,13 +7,16 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.pizzacrash.R;
+import com.example.pizzacrash.audio.AudioManager;
 import com.example.pizzacrash.data.SaveRepository;
 import com.google.android.material.materialswitch.MaterialSwitch;
 
 /**
  * Settings screen (UI_Refs/settings.png): sound effects, music and haptics
- * toggles backed directly by SaveRepository so they persist across restarts
- * and will drive the audio/haptics systems once those are wired (Phase 8).
+ * toggles backed directly by SaveRepository so they persist across restarts.
+ * The toggles actively gate the AudioManager feedback paths (every effect /
+ * haptic call re-checks these preferences), and changing Music stops any
+ * currently playing track immediately.
  */
 public class SettingsActivity extends AppCompatActivity {
 
@@ -25,12 +28,25 @@ public class SettingsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_settings);
 
         save = new SaveRepository(this);
+        final AudioManager audio = AudioManager.get(this);
 
-        findViewById(R.id.button_back).setOnClickListener(v -> finish());
+        findViewById(R.id.button_back).setOnClickListener(v -> {
+            audio.playEffect(AudioManager.SFX_TAP);
+            finish();
+        });
 
-        bindToggle(R.id.switch_sound, save.isSoundEnabled(), save::setSoundEnabled);
-        bindToggle(R.id.switch_music, save.isMusicEnabled(), save::setMusicEnabled);
-        bindToggle(R.id.switch_haptics, save.isHapticsEnabled(), save::setHapticsEnabled);
+        bindToggle(R.id.switch_sound, save.isSoundEnabled(), enabled -> {
+            save.setSoundEnabled(enabled);
+            if (enabled) audio.playEffect(AudioManager.SFX_TAP);
+        });
+        bindToggle(R.id.switch_music, save.isMusicEnabled(), enabled -> {
+            save.setMusicEnabled(enabled);
+            audio.onMusicPreferenceChanged(enabled);
+        });
+        bindToggle(R.id.switch_haptics, save.isHapticsEnabled(), enabled -> {
+            save.setHapticsEnabled(enabled);
+            if (enabled) audio.vibrateLong(this);
+        });
 
         ((TextView) findViewById(R.id.text_total_stars)).setText(
                 String.valueOf(save.getTotalStars()));

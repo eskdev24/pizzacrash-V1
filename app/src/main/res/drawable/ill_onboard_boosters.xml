@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Onboarding page 3: hammer + bomb booster icons. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp" android:height="120dp"
+    android:viewportWidth="120" android:viewportHeight="120">
+    <!-- hammer -->
+    <path android:pathData="M24,44 l14,-14 10,10 -14,14 z" android:fillColor="#8D6E63"/>
+    <path android:pathData="M40,22 h26 v16 h-26 z" android:fillColor="#B0BEC5"/>
+    <path android:pathData="M40,22 h26 v6 h-26 z" android:fillColor="#ECEFF1"/>
+    <!-- bomb -->
+    <path android:pathData="M78,74 m-16,0 a16,16 0 1,1 32,0 a16,16 0 1,1 -32,0" android:fillColor="#37474F"/>
+    <path android:pathData="M74,68 m-4,-2 a5,5 0 1,0 8,2" android:strokeColor="#FFFFFF" android:strokeWidth="3" android:fillColor="#00000000"/>
+    <path android:pathData="M86,56 q6,-8 12,-4" android:strokeColor="#F5B942" android:strokeWidth="4" android:strokeLineCap="round" android:fillColor="#00000000"/>
+    <path android:pathData="M100,46 l3,6 6,3 -6,3 -3,6 -3,-6 -6,-3 6,-3 z" android:fillColor="#FF7043"/>
+    <!-- sparkle ring -->
+    <path android:pathData="M30,86 m-8,0 a8,8 0 1,1 16,0 a8,8 0 1,1 -16,0" android:strokeColor="#EC407A" android:strokeWidth="3" android:fillColor="#00000000"/>
+</vector>

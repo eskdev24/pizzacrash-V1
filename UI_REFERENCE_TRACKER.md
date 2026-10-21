@@ -9,10 +9,7 @@ Status legend: `pending` = not started · `spec` = analyzed/specified · `implem
 |---|------|--------|-----------------------|----------|
 | 1 | splash.png | Splash / loading (variant A) | pending | — |
 | 2 | splash-new.png | Splash / loading (variant B — newer; confirm which is authoritative) | pending | — |
-| 3 | onboard1.png | Onboarding page 1 | pending | — |
-| 4 | onboard2.png | Onboarding page 2 | pending | — |
-| 5 | onboard3.png | Onboarding page 3 | pending | — |
-| 6 | onboarding1.png | Onboarding alt set page 1 (possible duplicate of onboard1 — needs confirmation) | pending | — |
+| 3 | onboard1.png | Onboarding page 1 | pending | — || Implemented (awaiting approval) | 4 | onboard2.png | Onboarding page 2 | pending | — || Implemented (awaiting approval) | 5 | onboard3.png | Onboarding page 3 | pending | — || Implemented (awaiting approval) | 6 | onboarding1.png | Onboarding alt set page 1 (possible duplicate of onboard1 — needs confirmation) | pending | — |
 | 7 | onboarding2.png | Onboarding alt set page 2 | pending | — |
 | 8 | onboarding3.png | Onboarding alt set page 3 | pending | — |
 | 9 | home.png | Main home screen | built (native recreation; awaiting user review) | pending |

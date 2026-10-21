@@ -67,4 +67,16 @@
     <string name="action_claim">Claim reward</string>
     <string name="action_claimed_today">Claimed today</string>
     <string name="toast_daily_claimed">Reward claimed! +50 coins</string>
+
+    <!-- Onboarding -->
+    <string name="onboard_1_title">Match the Ingredients!</string>
+    <string name="onboard_1_body">Swap tomatoes, cheese, pepperoni and more to make matches of three or more.</string>
+    <string name="onboard_2_title">Complete Objectives</string>
+    <string name="onboard_2_body">Collect the ingredients and reach the target before you run out of moves to earn stars.</string>
+    <string name="onboard_3_title">Use Boosters &amp; Win</string>
+    <string name="onboard_3_body">Hammer, Bomb, Swap and Rainbow boosters help you crash through the toughest levels.</string>
+    <string name="action_skip">Skip</string>
+    <string name="action_next">Next</string>
+    <string name="action_get_playing">Get Playing</string>
+    <string name="label_page_of_pages">%1$d/%2$d</string>
 </resources>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Page-indicator dot for the onboarding pager: current page = red pill. -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_selected="true">
+        <shape android:shape="rectangle">
+            <corners android:radius="6dp" />
+            <solid android:color="@color/pizza_red" />
+            <size android:width="24dp" android:height="12dp" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="6dp" />
+            <solid android:color="#66FFFFFF" />
+            <size android:width="12dp" android:height="12dp" />
+        </shape>
+    </item>
+</selector>

@@ -25,6 +25,7 @@ public final class SaveRepository {
     private static final String KEY_BOOSTER_PREFIX = "booster_";  // + boosterId
     private static final String KEY_DAILY_LAST_CLAIM = "daily_last_claim";
     private static final String KEY_DAILY_STREAK = "daily_streak";
+    private static final String KEY_ONBOARDING_DONE = "onboarding_completed";
 
     /** Current save schema version; bump when migrating. */
     private static final int SAVE_VERSION = 1;
@@ -55,6 +56,16 @@ public final class SaveRepository {
                 .putBoolean(KEY_MUSIC, true)
                 .putBoolean(KEY_HAPTICS, true)
                 .apply();
+    }
+
+    // ---------- Onboarding ----------
+
+    public boolean isOnboardingCompleted() {
+        return prefs.getBoolean(KEY_ONBOARDING_DONE, false);
+    }
+
+    public void setOnboardingCompleted(boolean done) {
+        prefs.edit().putBoolean(KEY_ONBOARDING_DONE, done).apply();
     }
 
     // ---------- Progression ----------

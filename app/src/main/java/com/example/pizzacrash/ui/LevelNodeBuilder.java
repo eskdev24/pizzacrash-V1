@@ -58,12 +58,18 @@ final class LevelNodeBuilder {
                     circleView.setBackgroundResource(R.drawable.bg_node_current);
                     number.setTextColor(0xFFFFFFFF);
                 } else {
+                    // Open node: white/gold fill needs the dark default text.
                     circleView.setBackgroundResource(R.drawable.bg_node_open);
+                    number.setTextColor(context.getColor(R.color.text_primary));
                 }
                 bindStars(node.findViewById(R.id.node_star_1),
                         node.findViewById(R.id.node_star_2),
                         node.findViewById(R.id.node_star_3), stars);
-                node.setOnClickListener(v -> openLevelIntro(context, globalId));
+                node.setOnClickListener(v -> {
+                    com.example.pizzacrash.audio.AudioManager.get(context)
+                            .hapticTap(v);
+                    openLevelIntro(context, globalId);
+                });
                 node.setClickable(true);
                 node.setFocusable(true);
                 node.setContentDescription(

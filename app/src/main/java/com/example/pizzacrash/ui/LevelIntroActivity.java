@@ -42,7 +42,7 @@ public class LevelIntroActivity extends AppCompatActivity {
         ((TextView) findViewById(R.id.text_level_number))
                 .setText(getString(R.string.label_level, local));
         ((TextView) findViewById(R.id.text_world_name))
-                .setText(getString(WorldMapActivity.worldNameRes(world))
+                .setText(getString(WorldTheme.nameRes(world))
                         + " · " + getString(R.string.label_world, world));
 
         int best = save.getBestScore(levelId);

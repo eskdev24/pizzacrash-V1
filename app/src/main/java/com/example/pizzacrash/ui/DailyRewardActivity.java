@@ -8,6 +8,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.pizzacrash.R;
+import com.example.pizzacrash.audio.AudioManager;
 import com.example.pizzacrash.data.SaveRepository;
 import com.google.android.material.button.MaterialButton;
 
@@ -67,6 +68,7 @@ public class DailyRewardActivity extends AppCompatActivity {
         int streak = (last > 0 && now - last <= 2 * DAY_MS)
                 ? save.getDailyStreak() + 1 : 1;
 
+        AudioManager.get(this).playEffect(AudioManager.SFX_COIN);
         save.setDailyStreak(streak);
         save.setLastDailyClaimMillis(now);
         save.addCoins(REWARD_COINS);

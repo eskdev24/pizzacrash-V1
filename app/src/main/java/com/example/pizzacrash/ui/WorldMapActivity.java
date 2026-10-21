@@ -35,6 +35,10 @@ public class WorldMapActivity extends AppCompatActivity {
                 getIntent().getIntExtra(EXTRA_WORLD, 1)));
         save = new SaveRepository(this);
 
+        // Per-world themed background — configuration-driven, one map impl (§6).
+        findViewById(R.id.map_root)
+                .setBackground(WorldTheme.backgroundFor(this, world));
+
         findViewById(R.id.button_back).setOnClickListener(v -> finish());
         findViewById(R.id.button_gift).setOnClickListener(v ->
                 startActivity(new Intent(this, DailyRewardActivity.class)));
@@ -50,7 +54,7 @@ public class WorldMapActivity extends AppCompatActivity {
 
     private void refresh() {
         ((TextView) findViewById(R.id.text_world_title))
-                .setText(getString(worldNameRes(world)));
+                .setText(getString(WorldTheme.nameRes(world)));
         ((TextView) findViewById(R.id.text_world_subtitle))
                 .setText(getString(R.string.label_world, world));
 
@@ -93,19 +97,4 @@ public class WorldMapActivity extends AppCompatActivity {
         startActivity(i);
     }
 
-    /** Resolves world_1..world_10 string resources from the world number. */
-    static int worldNameRes(int world) {
-        switch (world) {
-            case 2:  return R.string.world_2;
-            case 3:  return R.string.world_3;
-            case 4:  return R.string.world_4;
-            case 5:  return R.string.world_5;
-            case 6:  return R.string.world_6;
-            case 7:  return R.string.world_7;
-            case 8:  return R.string.world_8;
-            case 9:  return R.string.world_9;
-            case 10: return R.string.world_10;
-            default: return R.string.world_1;
-        }
-    }
 }
