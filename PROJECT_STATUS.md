@@ -57,3 +57,13 @@ Then STOP and wait for the first UI reference image (expected: home/splash scree
 |---|---|---|
 | Phase 0 inspection report | Approved by user | 2026-10-21 |
 | Phase 1 foundation scaffold | Implemented — awaiting visual review/approval | 2026-10-21 |
+
+## 2026-10-21 — Home screen implemented from UI_Refs/home.png (status: built, awaiting approval)
+- Recreated natively: sky gradient (#0083F7 -> cream horizon), sun/cloud decorations, coin chip,
+  PizzaCrash logo lockup (original vector pizza slice), green meadow band, big glossy PLAY button,
+  round Settings/Shop/Daily-reward shortcut buttons. No screenshot used as background.
+- New drawables: bg_home_sky, bg_home_ground, ic_sun, ic_cloud, ic_pizza_logo, bg_button_play,
+  selectable_button_play, bg_icon_button, ic_gear, ic_bag, ic_gift.
+- HomeActivity rewired: PLAY -> WorldMap (with press animation); shortcuts toast "coming soon"
+  until their approved screens exist. Coin balance live from SaveRepository.
+- Build: ./gradlew assembleDebug PASSED. Runtime not verified (no emulator in this environment).

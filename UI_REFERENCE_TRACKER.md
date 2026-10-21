@@ -15,7 +15,7 @@ Status legend: `pending` = not started · `spec` = analyzed/specified · `implem
 | 6 | onboarding1.png | Onboarding alt set page 1 (possible duplicate of onboard1 — needs confirmation) | pending | — |
 | 7 | onboarding2.png | Onboarding alt set page 2 | pending | — |
 | 8 | onboarding3.png | Onboarding alt set page 3 | pending | — |
-| 9 | home.png | Main home screen | pending | — |
+| 9 | home.png | Main home screen | built (native recreation; awaiting user review) | pending |
 | 10 | map.png | World selection / level map entry | pending | — |
 | 11 | w1.png | World 1 — Pizza Town map | pending | — |
 | 12 | w2.png | World 2 — Italian Village map | pending | — |

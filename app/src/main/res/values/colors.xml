@@ -42,4 +42,14 @@
     <color name="coin_gold">#F2B233</color>
     <color name="locked_grey">#B9B2AA</color>
     <color name="scrim">#99000000</color>
+    <!-- Home screen scene (from home.png reference) -->
+    <color name="home_sky_top">#FF0083F7</color>
+    <color name="home_sky_mid">#FF55B4F0</color>
+    <color name="home_horizon">#FFFDF3DD</color>
+    <color name="home_grass_top">#FF6CC455</color>
+    <color name="home_grass_bottom">#FF3C8F2E</color>
+    <color name="btn_play_green">#FF5BB432</color>
+    <color name="btn_play_green_dark">#FF3E8A1E</color>
+    <color name="chip_bg">#FFFFFFFF</color>
+
 </resources>

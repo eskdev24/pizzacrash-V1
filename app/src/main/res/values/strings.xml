@@ -22,4 +22,9 @@
     <string name="label_level">Level %1$d</string>
     <string name="label_world">World %1$d</string>
     <string name="hello_world">Hello World!</string>
+    <string name="home_tagline">Match. Bake. Crash!</string>
+    <string name="action_shop">Shop</string>
+    <string name="action_daily_reward">Daily reward</string>
+    <string name="action_settings">Settings</string>
+    <string name="cd_coins">Coin balance</string>
 </resources>

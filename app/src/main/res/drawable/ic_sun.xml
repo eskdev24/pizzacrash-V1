@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Cheerful sun corner decoration (original artwork, vector). -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="72dp"
+    android:height="72dp"
+    android:viewportWidth="72"
+    android:viewportHeight="72">
+    <group android:pivotX="36" android:pivotY="36" android:rotation="22">
+        <path android:fillColor="#FFFFD966" android:pathData="M36,2 L41,14 L31,14 Z" />
+        <path android:fillColor="#FFFFD966" android:pathData="M36,70 L41,58 L31,58 Z" />
+        <path android:fillColor="#FFFFD966" android:pathData="M2,36 L14,31 L14,41 Z" />
+        <path android:fillColor="#FFFFD966" android:pathData="M70,36 L58,31 L58,41 Z" />
+        <path android:fillColor="#FFFFD966" android:pathData="M12,12 L22,17 L17,22 Z" />
+        <path android:fillColor="#FFFFD966" android:pathData="M60,12 L50,17 L55,22 Z" />
+        <path android:fillColor="#FFFFD966" android:pathData="M12,60 L17,50 L22,55 Z" />
+        <path android:fillColor="#FFFFD966" android:pathData="M60,60 L55,50 L50,55 Z" />
+    </group>
+    <path android:fillColor="#FFFFC53D" android:pathData="M36,36m-20,20a20,20 0 1,1 40,0a20,20 0 1,1 -40,0" />
+    <path android:fillColor="#FFFFE08A" android:pathData="M36,36m-13,13a13,13 0 1,1 26,0a13,13 0 1,1 -26,0" />
+</vector>

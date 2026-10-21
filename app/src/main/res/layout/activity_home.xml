@@ -1,27 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  Home screen — recreated from UI_Refs/home.png.
+  Composition (top to bottom): blue sky gradient, sun + clouds, PizzaCrash logo lockup,
+  coin chip, green grass band with the big PLAY button and round side shortcuts.
+  All elements are independently rendered native views; no screenshot backgrounds.
+-->
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/cream"
+    android:background="@drawable/bg_home_sky"
     android:fitsSystemWindows="true">
 
-    <!-- Coin chip (top-end) -->
+    <!-- Ground / meadow band occupying the lower part of the scene -->
+    <View
+        android:id="@+id/ground"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_home_ground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.42"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Sun decoration, top-right -->
+    <ImageView
+        android:id="@+id/decor_sun"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="@dimen/space_m"
+        android:layout_marginEnd="-12dp"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_sun"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Clouds -->
+    <ImageView
+        android:id="@+id/decor_cloud_1"
+        android:layout_width="96dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="@dimen/space_s"
+        android:layout_marginTop="@dimen/space_xl"
+        android:alpha="0.95"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_cloud"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/decor_cloud_2"
+        android:layout_width="72dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="@dimen/space_l"
+        android:alpha="0.85"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_cloud"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/decor_cloud_1" />
+
+    <!-- Coin chip, top-left -->
     <LinearLayout
         android:id="@+id/chip_coins"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
+        android:layout_marginStart="@dimen/space_m"
+        android:layout_marginTop="@dimen/space_m"
         android:background="@drawable/bg_chip"
+        android:gravity="center_vertical"
         android:paddingStart="@dimen/space_s"
-        android:paddingEnd="@dimen/space_m"
         android:paddingTop="@dimen/space_xs"
+        android:paddingEnd="@dimen/space_m"
         android:paddingBottom="@dimen/space_xs"
-        android:layout_margin="@dimen/space_m"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/decor_cloud_1">
 
         <View
             android:layout_width="20dp"
@@ -33,51 +87,149 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/space_s"
-            android:textAppearance="@style/TextAppearance.PizzaCrash.Body"
-            android:textStyle="bold"
+            android:contentDescription="@string/cd_coins"
             android:text="0"
-            xmlns:tools="http://schemas.android.com/tools" />
+            android:textAppearance="@style/TextAppearance.PizzaCrash.Body"
+            android:textStyle="bold" />
     </LinearLayout>
 
-    <!-- Title -->
+    <!-- Logo lockup -->
+    <ImageView
+        android:id="@+id/image_logo"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="@dimen/space_xl"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_pizza_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chip_coins" />
+
     <TextView
         android:id="@+id/text_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:shadowColor="#66000000"
+        android:shadowDx="0"
+        android:shadowDy="3"
+        android:shadowRadius="6"
         android:text="@string/app_name"
         android:textAppearance="@style/TextAppearance.PizzaCrash.Display"
-        android:textColor="@color/pizza_red"
-        android:layout_marginTop="@dimen/space_xl"
-        app:layout_constraintTop_toBottomOf="@+id/chip_coins"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/image_logo" />
 
-    <!-- Play button -->
-    <com.google.android.material.button.MaterialButton
+    <TextView
+        android:id="@+id/text_tagline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/home_tagline"
+        android:textAppearance="@style/TextAppearance.PizzaCrash.Title"
+        android:textColor="@color/star_amber"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_title" />
+
+    <!-- Big PLAY button on the grass -->
+    <TextView
         android:id="@+id/button_play"
-        style="@style/Widget.PizzaCrash.Button.Primary"
         android:layout_width="0dp"
-        android:layout_height="@dimen/button_height"
-        android:layout_marginStart="@dimen/space_l"
-        android:layout_marginEnd="@dimen/space_l"
-        android:layout_marginBottom="@dimen/space_s"
+        android:layout_height="72dp"
+        android:layout_marginStart="@dimen/space_xl"
+        android:layout_marginEnd="@dimen/space_xl"
+        android:layout_marginBottom="@dimen/space_l"
+        android:background="@drawable/selectable_button_play"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
         android:text="@string/action_play"
-        app:layout_constraintBottom_toTopOf="@+id/button_levels"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <!-- Levels button -->
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/button_levels"
-        style="@style/Widget.PizzaCrash.Button.Secondary"
-        android:layout_width="0dp"
-        android:layout_height="@dimen/button_height"
-        android:layout_marginStart="@dimen/space_l"
-        android:layout_marginEnd="@dimen/space_l"
-        android:layout_marginBottom="@dimen/space_xl"
-        android:text="Levels"
+        android:textColor="@color/text_on_primary"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:elevation="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toStartOf="@id/guideline_right"
+        app:layout_constraintStart_toEndOf="@id/guideline_left" />
+
+    <!-- Round shortcut buttons flanking PLAY -->
+    <FrameLayout
+        android:id="@+id/button_settings"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="@dimen/space_m"
+        android:layout_marginBottom="@dimen/space_l"
+        android:background="@drawable/bg_icon_button"
+        android:clickable="true"
+        android:focusable="true"
+        android:contentDescription="@string/action_settings"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_gravity="center"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_gear" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/button_shop"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginEnd="@dimen/space_m"
+        android:layout_marginBottom="@dimen/space_l"
+        android:background="@drawable/bg_icon_button"
+        android:clickable="true"
+        android:focusable="true"
+        android:contentDescription="@string/action_shop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_gravity="center"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_bag" />
+    </FrameLayout>
+
+    <!-- Daily-reward gift button above the shop button -->
+    <FrameLayout
+        android:id="@+id/button_daily"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginEnd="@dimen/space_m"
+        android:layout_marginBottom="@dimen/space_m"
+        android:background="@drawable/bg_icon_button"
+        android:clickable="true"
+        android:focusable="true"
+        android:contentDescription="@string/action_daily_reward"
+        app:layout_constraintBottom_toTopOf="@id/button_shop"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_gravity="center"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_gift" />
+    </FrameLayout>
+
+    <!-- Guidelines keeping PLAY clear of the round buttons -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_left"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="80dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_right"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="80dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
