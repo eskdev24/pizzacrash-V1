@@ -1,8 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!-- Template palette (preserved) -->
+    <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
-    <color name="ic_launcher_background">#FF6200EE</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="ic_launcher_background">#3DDC84</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- ============ PizzaCrash design tokens ============ -->
+    <!-- Brand -->
+    <color name="pizza_red">#E43C33</color>
+    <color name="pizza_red_dark">#B32A24</color>
+    <color name="crust_gold">#F5B942</color>
+    <color name="crust_gold_dark">#C98A2B</color>
+    <color name="tomato">#E8503A</color>
+    <color name="basil_green">#4CAF50</color>
+    <color name="olive">#6B8E23</color>
+    <color name="cheese">#FFD54F</color>
+    <color name="mushroom">#A1887F</color>
+    <color name="onion_purple">#9575CD</color>
+    <color name="pepper_yellow">#FFC94D</color>
+
+    <!-- Surfaces & panels -->
+    <color name="cream">#FFF6E3</color>
+    <color name="panel_bg">#FFFFFF</color>
+    <color name="panel_stroke">#EADFC8</color>
+    <color name="board_bg">#FFE9C7</color>
+    <color name="tile_bg">#FFFFFF</color>
+
+    <!-- Text -->
+    <color name="text_primary">#3E2B1F</color>
+    <color name="text_secondary">#8A7666</color>
+    <color name="text_on_primary">#FFFFFF</color>
+
+    <!-- Feedback / economy -->
+    <color name="success_green">#43A047</color>
+    <color name="star_amber">#FFC53D</color>
+    <color name="coin_gold">#F2B233</color>
+    <color name="locked_grey">#B9B2AA</color>
+    <color name="scrim">#99000000</color>
 </resources>

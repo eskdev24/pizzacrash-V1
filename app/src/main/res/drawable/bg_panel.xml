@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Rounded cream panel with soft stroke, used for HUD/inventory panels. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <solid android:color="@color/panel_bg" />
+    <corners android:radius="@dimen/panel_corner" />
+    <stroke android:width="2dp" android:color="@color/panel_stroke" />
+</shape>

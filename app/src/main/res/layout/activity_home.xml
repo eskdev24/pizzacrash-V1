@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cream"
+    android:fitsSystemWindows="true">
+
+    <!-- Coin chip (top-end) -->
+    <LinearLayout
+        android:id="@+id/chip_coins"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@drawable/bg_chip"
+        android:paddingStart="@dimen/space_s"
+        android:paddingEnd="@dimen/space_m"
+        android:paddingTop="@dimen/space_xs"
+        android:paddingBottom="@dimen/space_xs"
+        android:layout_margin="@dimen/space_m"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <View
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/ic_coin_placeholder" />
+
+        <TextView
+            android:id="@+id/text_coins"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_s"
+            android:textAppearance="@style/TextAppearance.PizzaCrash.Body"
+            android:textStyle="bold"
+            android:text="0"
+            xmlns:tools="http://schemas.android.com/tools" />
+    </LinearLayout>
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/text_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textAppearance="@style/TextAppearance.PizzaCrash.Display"
+        android:textColor="@color/pizza_red"
+        android:layout_marginTop="@dimen/space_xl"
+        app:layout_constraintTop_toBottomOf="@+id/chip_coins"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Play button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_play"
+        style="@style/Widget.PizzaCrash.Button.Primary"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginStart="@dimen/space_l"
+        android:layout_marginEnd="@dimen/space_l"
+        android:layout_marginBottom="@dimen/space_s"
+        android:text="@string/action_play"
+        app:layout_constraintBottom_toTopOf="@+id/button_levels"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Levels button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_levels"
+        style="@style/Widget.PizzaCrash.Button.Secondary"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginStart="@dimen/space_l"
+        android:layout_marginEnd="@dimen/space_l"
+        android:layout_marginBottom="@dimen/space_xl"
+        android:text="Levels"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

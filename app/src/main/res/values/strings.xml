@@ -1,4 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">PizzaCrash</string>
+
+    <!-- World names (index = world number) -->
+    <string name="world_1">Pizza Town</string>
+    <string name="world_2">Italian Village</string>
+    <string name="world_3">Desert Oasis</string>
+    <string name="world_4">Ocean Bay</string>
+    <string name="world_5">Snowy Mountains</string>
+    <string name="world_6">City Skyline</string>
+    <string name="world_7">Tropical Island</string>
+    <string name="world_8">Volcano Land</string>
+    <string name="world_9">Candy Forest</string>
+    <string name="world_10">Pizza Kingdom</string>
+
+    <!-- Common UI -->
+    <string name="action_play">Play</string>
+    <string name="action_continue">Continue</string>
+    <string name="action_back">Back</string>
+    <string name="action_close">Close</string>
+    <string name="label_level">Level %1$d</string>
+    <string name="label_world">World %1$d</string>
     <string name="hello_world">Hello World!</string>
 </resources>

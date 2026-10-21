@@ -48,10 +48,11 @@ Date of last update: 2026-10-21
 Then STOP and wait for the first UI reference image (expected: home/splash screen) before implementing any approved screen.
 
 ## Recent changes
+- 2026-10-21: Phase 1 foundation scaffold implemented (user approved Phase 0 + first step): design tokens (colors.xml, dimens.xml, styles.xml), Theme.PizzaCrash + Theme.PizzaCrash.Splash themes, portrait manifest with Splash→Home→WorldMap navigation stubs, SaveRepository (SharedPreferences persistence for progression/economy/boosters/settings), world-name strings, junit test dependency. Verified `assembleDebug` + `testDebugUnitTest` → BUILD SUCCESSFUL.
 - 2026-10-21: Added `README.md` (project overview, tech stack, build instructions, workflow). No application code changed; `assembleDebug` re-verified BUILD SUCCESSFUL after the addition.
 
 ## Approval log
 | Milestone | Status | Date |
 |---|---|---|
-| Phase 0 inspection report | Delivered — awaiting user approval | 2026-10-21 |
-| Phase 1 foundation | Proposed — not started | — |
+| Phase 0 inspection report | Approved by user | 2026-10-21 |
+| Phase 1 foundation scaffold | Implemented — awaiting visual review/approval | 2026-10-21 |
