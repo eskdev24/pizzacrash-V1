@@ -11,7 +11,7 @@ An original, colorful, premium-quality **native Android match-3 puzzle game**. P
 | **Language** | Java |
 | **UI framework** | XML layouts + Material Components |
 | **Build system** | Gradle (Groovy DSL), AGP 8.5.2, Gradle wrapper 8.7 |
-| **Package / applicationId** | `com.example.myapplication` |
+| **Package / applicationId** | `com.example.pizzacrash` (migrated from `com.example.myapplication`) |
 | **SDK** | compileSdk 34 · minSdk 24 · targetSdk 34 · Java 17 |
 
 The game board is rendered with a custom Android `View` (Canvas drawing); no game engines or cross-platform frameworks are used.

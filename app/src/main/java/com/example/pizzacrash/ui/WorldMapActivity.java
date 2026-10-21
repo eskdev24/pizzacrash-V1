@@ -1,4 +1,4 @@
-package com.example.myapplication.ui;
+package com.example.pizzacrash.ui;
 
 import android.os.Bundle;
 import android.widget.TextView;
@@ -6,8 +6,8 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.myapplication.R;
-import com.example.myapplication.data.SaveRepository;
+import com.example.pizzacrash.R;
+import com.example.pizzacrash.data.SaveRepository;
 
 /**
  * Reusable world-map scaffold driven by configuration + progression data.
