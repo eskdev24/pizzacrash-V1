@@ -1,5 +1,6 @@
 package com.example.pizzacrash.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -13,8 +14,7 @@ import com.example.pizzacrash.data.SaveRepository;
 
 /**
  * Level introduction screen (UI_Refs/level.png): shows the level number, world,
- * objective summary placeholder and a big Play button. The match-3 board arrives
- * in Phase 3; Play currently reports that gameplay is not yet built (honest stub).
+ * objective summary from LevelConfig and a big Play button that starts GameActivity.
  */
 public class LevelIntroActivity extends AppCompatActivity {
 
@@ -45,6 +45,19 @@ public class LevelIntroActivity extends AppCompatActivity {
                 .setText(getString(WorldTheme.nameRes(world))
                         + " · " + getString(R.string.label_world, world));
 
+        // Objective preview from LevelConfig (data-driven, spec §8).
+        com.example.pizzacrash.game.LevelConfig cfg =
+                com.example.pizzacrash.game.LevelConfig.load(this, levelId);
+        StringBuilder objText = new StringBuilder();
+        for (int[] obj : cfg.objectives) {
+            if (objText.length() > 0) objText.append("   ");
+            objText.append(obj[0] == -1
+                    ? "\u2605 " + obj[1]
+                    : com.example.pizzacrash.game.TileType.fromId(obj[0]).glyph + " " + obj[1]);
+        }
+        objText.append("  \u00b7  " + getString(R.string.game_moves_fmt, cfg.moveLimit));
+        ((TextView) findViewById(R.id.text_objective)).setText(objText);
+
         int best = save.getBestScore(levelId);
         TextView bestView = findViewById(R.id.text_best_score);
         if (best > 0) {
@@ -55,8 +68,10 @@ public class LevelIntroActivity extends AppCompatActivity {
         }
 
         findViewById(R.id.button_back).setOnClickListener(v -> finish());
-        findViewById(R.id.button_play).setOnClickListener(v ->
-                // Gameplay board is Phase 3 — do not fake functionality.
-                Toast.makeText(this, R.string.toast_gameplay_pending, Toast.LENGTH_SHORT).show());
+        findViewById(R.id.button_play).setOnClickListener(v -> {
+            Intent i = new Intent(this, GameActivity.class);
+            i.putExtra(GameActivity.EXTRA_GLOBAL_LEVEL, levelId);
+            startActivity(i);
+        });
     }
 }

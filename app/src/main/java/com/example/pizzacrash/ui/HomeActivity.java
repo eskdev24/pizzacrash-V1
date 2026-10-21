@@ -37,6 +37,8 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(new Intent(this, ShopActivity.class)));
         findViewById(R.id.button_daily).setOnClickListener(v ->
                 startActivity(new Intent(this, DailyRewardActivity.class)));
+        findViewById(R.id.button_profile).setOnClickListener(v ->
+                startActivity(new Intent(this, ProfileActivity.class)));
     }
 
     @Override

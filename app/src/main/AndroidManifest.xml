@@ -50,6 +50,12 @@
             android:theme="@style/Theme.PizzaCrash" />
 
         <activity
+            android:name=".ui.ProfileActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.PizzaCrash" />
+
+        <activity
             android:name=".ui.SettingsActivity"
             android:exported="false"
             android:screenOrientation="portrait"
@@ -63,6 +69,18 @@
 
         <activity
             android:name=".ui.DailyRewardActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.PizzaCrash" />
+
+        <activity
+            android:name=".ui.GameActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.PizzaCrash" />
+
+        <activity
+            android:name=".ui.ResultActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.PizzaCrash" />

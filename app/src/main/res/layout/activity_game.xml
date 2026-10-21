@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Gameplay screen (UI_Refs/gameboard.png + pause.png + won/loss refs).
+     HUD top bar -> objective chips -> board -> bottom controls. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/board_bg">
+
+    <!-- Top HUD: score / level / moves / pause -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="@dimen/space_m">
+
+        <TextView
+            android:id="@+id/tv_score"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/cream"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:text="Score 0" />
+
+        <ImageButton
+            android:id="@+id/btn_pause"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_round_button"
+            android:src="@drawable/ic_pause"
+            android:contentDescription="@string/cd_pause"
+            android:padding="10dp"
+            app:tint="@color/cream"
+            xmlns:app="http://schemas.android.com/apk/res-auto" />
+
+        <TextView
+            android:id="@+id/tv_moves"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:textColor="@color/cream"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:text="Moves 30" />
+    </LinearLayout>
+
+    <!-- Objective chips row -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:paddingHorizontal="@dimen/space_m">
+
+        <LinearLayout
+            android:id="@+id/objective_row"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" />
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/tv_objective_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+    <!-- Match-3 board -->
+    <com.example.pizzacrash.game.BoardView
+        android:id="@+id/board_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_margin="@dimen/space_s" />
+
+    <!-- Booster bar: hammer / bomb / swap / rainbow / hint -->
+    <LinearLayout
+        android:id="@+id/booster_row"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingHorizontal="@dimen/space_m">
+
+        <TextView android:id="@+id/btn_boost_hammer" style="@style/BoosterChip"
+            android:text="@string/booster_hammer" />
+        <TextView android:id="@+id/btn_boost_bomb" style="@style/BoosterChip"
+            android:text="@string/booster_bomb" />
+        <TextView android:id="@+id/btn_boost_swap" style="@style/BoosterChip"
+            android:text="@string/booster_swap" />
+        <TextView android:id="@+id/btn_boost_rainbow" style="@style/BoosterChip"
+            android:text="@string/booster_rainbow" />
+        <TextView android:id="@+id/btn_hint" style="@style/BoosterChip"
+            android:text="@string/hint_button" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_boost_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:visibility="gone"
+        android:textColor="@color/cream"
+        android:textSize="13sp"
+        android:paddingVertical="4dp" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_m" />
+</LinearLayout>

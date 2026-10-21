@@ -217,6 +217,35 @@
             android:src="@drawable/ic_gift" />
     </FrameLayout>
 
+    <!-- Profile button (opens user profile screen) -->
+    <FrameLayout
+        android:id="@+id/button_profile"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="@dimen/space_m"
+        android:layout_marginBottom="@dimen/space_m"
+        android:background="@drawable/bg_icon_button"
+        android:clickable="true"
+        android:focusable="true"
+        android:contentDescription="@string/action_profile"
+        app:layout_constraintBottom_toTopOf="@id/guideline_bottom"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_gravity="center"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_profile" />
+    </FrameLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_bottom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="80dp" />
+
     <!-- Guidelines keeping PLAY clear of the round buttons -->
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_left"

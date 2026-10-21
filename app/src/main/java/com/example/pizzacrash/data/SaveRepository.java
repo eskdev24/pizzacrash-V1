@@ -38,13 +38,22 @@ public final class SaveRepository {
     public static final int TOTAL_WORLDS = 10;
 
     private final SharedPreferences prefs;
+    /** SQLite is the durable source of truth; prefs act as a fast cache mirror. */
+    private final GameDatabase db;
 
     public SaveRepository(Context context) {
         this.prefs = context.getApplicationContext()
                 .getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+        this.db = new GameDatabase(context);
         if (prefs.getInt(KEY_VERSION, -1) != SAVE_VERSION) {
             initFreshSave();
         }
+        migrateLegacyProgressToDb();
+    }
+
+    /** Direct access to the SQLite layer (profile fields not cached in prefs). */
+    public GameDatabase getDatabase() {
+        return db;
     }
 
     private void initFreshSave() {
@@ -58,6 +67,31 @@ public final class SaveRepository {
                 .apply();
     }
 
+    /**
+     * One-time backfill: copies any pre-SQLite SharedPreferences progress into the
+     * database. Safe to run repeatedly — DB keeps only best values and the meta
+     * key "legacy_migrated" prevents re-copying after coins/settings diverge.
+     */
+    private void migrateLegacyProgressToDb() {
+        if ("1".equals(db.getMeta("legacy_migrated", null))) return;
+        for (int levelId = 1; levelId <= TOTAL_LEVELS; levelId++) {
+            int stars = prefs.getInt(KEY_STARS_PREFIX + levelId, 0);
+            int best = prefs.getInt(KEY_BEST_PREFIX + levelId, 0);
+            if (stars > 0 || best > 0) {
+                db.recordResult(levelId, stars, best);
+            }
+        }
+        db.putMetaInt("coins", getCoins());
+        db.putMetaInt("unlocked_level", getUnlockedLevel());
+        db.putMeta("sound_enabled", String.valueOf(isSoundEnabled()));
+        db.putMeta("music_enabled", String.valueOf(isMusicEnabled()));
+        db.putMeta("haptics_enabled", String.valueOf(isHapticsEnabled()));
+        db.putMetaInt("daily_last_claim", getLastDailyClaimMillis());
+        db.putMetaInt("daily_streak", getDailyStreak());
+        db.putMetaInt("onboarding_completed", isOnboardingCompleted() ? 1 : 0);
+        db.putMeta("legacy_migrated", "1");
+    }
+
     // ---------- Onboarding ----------
 
     public boolean isOnboardingCompleted() {
@@ -66,6 +100,7 @@ public final class SaveRepository {
 
     public void setOnboardingCompleted(boolean done) {
         prefs.edit().putBoolean(KEY_ONBOARDING_DONE, done).apply();
+        db.putMetaInt("onboarding_completed", done ? 1 : 0);
     }
 
     // ---------- Progression ----------
@@ -80,6 +115,7 @@ public final class SaveRepository {
         int clamped = Math.max(1, Math.min(TOTAL_LEVELS, levelId));
         if (clamped > getUnlockedLevel()) {
             prefs.edit().putInt(KEY_UNLOCKED_LEVEL, clamped).apply();
+            db.putMetaInt("unlocked_level", clamped);
         }
     }
 
@@ -127,6 +163,9 @@ public final class SaveRepository {
             improved = true;
         }
         editor.apply();
+        // Durable copy in SQLite (DB itself keeps only best values).
+        db.recordResult(levelId, Math.max(getStars(levelId), stars),
+                Math.max(getBestScore(levelId), score));
         return improved;
     }
 
@@ -147,7 +186,9 @@ public final class SaveRepository {
 
     public void addCoins(int amount) {
         if (amount <= 0) return;
-        prefs.edit().putInt(KEY_COINS, getCoins() + amount).apply();
+        int balance = getCoins() + amount;
+        prefs.edit().putInt(KEY_COINS, balance).apply();
+        db.putMetaInt("coins", balance);
     }
 
     /** @return true if deducted; false if balance was insufficient (no change made). */
@@ -156,6 +197,7 @@ public final class SaveRepository {
         int balance = getCoins();
         if (balance < amount) return false;
         prefs.edit().putInt(KEY_COINS, balance - amount).apply();
+        db.putMetaInt("coins", balance - amount);
         return true;
     }
 
@@ -167,9 +209,9 @@ public final class SaveRepository {
 
     public void addBoosters(String boosterId, int amount) {
         if (amount <= 0) return;
-        prefs.edit()
-                .putInt(KEY_BOOSTER_PREFIX + boosterId, getBoosterCount(boosterId) + amount)
-                .apply();
+        int total = getBoosterCount(boosterId) + amount;
+        prefs.edit().putInt(KEY_BOOSTER_PREFIX + boosterId, total).apply();
+        db.putMetaInt("booster_" + boosterId, total); // durable mirror
     }
 
     /** @return true if consumed; false if none available. */
@@ -177,6 +219,7 @@ public final class SaveRepository {
         int count = getBoosterCount(boosterId);
         if (count <= 0) return false;
         prefs.edit().putInt(KEY_BOOSTER_PREFIX + boosterId, count - 1).apply();
+        db.putMetaInt("booster_" + boosterId, count - 1); // durable mirror
         return true;
     }
 
@@ -186,9 +229,18 @@ public final class SaveRepository {
     public boolean isMusicEnabled() { return prefs.getBoolean(KEY_MUSIC, true); }
     public boolean isHapticsEnabled() { return prefs.getBoolean(KEY_HAPTICS, true); }
 
-    public void setSoundEnabled(boolean v) { prefs.edit().putBoolean(KEY_SOUND, v).apply(); }
-    public void setMusicEnabled(boolean v) { prefs.edit().putBoolean(KEY_MUSIC, v).apply(); }
-    public void setHapticsEnabled(boolean v) { prefs.edit().putBoolean(KEY_HAPTICS, v).apply(); }
+    public void setSoundEnabled(boolean v) {
+        prefs.edit().putBoolean(KEY_SOUND, v).apply();
+        db.putMeta("sound_enabled", String.valueOf(v));
+    }
+    public void setMusicEnabled(boolean v) {
+        prefs.edit().putBoolean(KEY_MUSIC, v).apply();
+        db.putMeta("music_enabled", String.valueOf(v));
+    }
+    public void setHapticsEnabled(boolean v) {
+        prefs.edit().putBoolean(KEY_HAPTICS, v).apply();
+        db.putMeta("haptics_enabled", String.valueOf(v));
+    }
 
     // ---------- Daily reward ----------
 
@@ -199,6 +251,7 @@ public final class SaveRepository {
 
     public void setLastDailyClaimMillis(long millis) {
         prefs.edit().putLong(KEY_DAILY_LAST_CLAIM, millis).apply();
+        db.putMetaInt("daily_last_claim", millis);
     }
 
     /** Consecutive-day claim streak (>=1 once claimed at least once). */
@@ -207,6 +260,8 @@ public final class SaveRepository {
     }
 
     public void setDailyStreak(int streak) {
-        prefs.edit().putInt(KEY_DAILY_STREAK, Math.max(0, streak)).apply();
+        int clamped = Math.max(0, streak);
+        prefs.edit().putInt(KEY_DAILY_STREAK, clamped).apply();
+        db.putMetaInt("daily_streak", clamped);
     }
 }

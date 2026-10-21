@@ -79,4 +79,37 @@
     <string name="action_next">Next</string>
     <string name="action_get_playing">Get Playing</string>
     <string name="label_page_of_pages">%1$d/%2$d</string>
+
+    <!-- Gameplay / results -->
+    <string name="game_score_fmt">Score %1$d</string>
+    <string name="game_moves_fmt">Moves %1$d</string>
+    <string name="cd_pause">Pause</string>
+    <string name="title_paused">Paused</string>
+    <string name="action_resume">Resume</string>
+    <string name="action_restart">Restart</string>
+    <string name="action_quit">Quit</string>
+    <string name="action_retry">Retry</string>
+    <string name="action_home">Home</string>
+    <string name="title_level_complete">Level Complete!</string>
+    <string name="title_out_of_moves">Out of Moves</string>
+    <string name="message_try_again">So close! Give it another shot.</string>
+    <string name="label_coins_earned">+%1$d coins</string>
+    <string name="hint_button">Hint</string>
+    <string name="boost_select_target">Tap a tile to target</string>
+    <string name="boost_select_two">Tap two tiles to swap them</string>
+    <string name="boost_none_left">No boosters left — visit the shop!</string>
+    <string name="action_profile">Profile</string>
+    <string name="profile_title">Chef Profile</string>
+    <string name="profile_display_name">Display name</string>
+    <string name="profile_save">Save name</string>
+    <string name="profile_name_hint">Your chef name</string>
+    <string name="profile_stats_title">Progress</string>
+    <string name="profile_total_stars">Total stars</string>
+    <string name="profile_levels_completed">Levels completed</string>
+    <string name="profile_coins">Coins</string>
+    <string name="profile_current_world">Current world</string>
+    <string name="profile_member_since">Player since</string>
+    <string name="profile_name_saved">Name saved</string>
+    <string name="profile_since_prefix">Player since %1$s</string>
+    <string name="map_world_fallback">World %1$d</string>
 </resources>
