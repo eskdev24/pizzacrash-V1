@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Completed level node: green circle with darker depth edge. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="@color/btn_play_green_dark" />
+        </shape>
+    </item>
+    <item bottom="3dp" right="2dp">
+        <shape android:shape="oval">
+            <solid android:color="@color/btn_play_green" />
+            <stroke android:width="3dp" android:color="@color/panel_bg" />
+        </shape>
+    </item>
+</layer-list>

@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -32,9 +31,12 @@ public class HomeActivity extends AppCompatActivity {
         save = new SaveRepository(this);
 
         findViewById(R.id.button_play).setOnClickListener(v -> openWorldMap());
-        findViewById(R.id.button_settings).setOnClickListener(v -> notYetBuilt(R.string.action_settings));
-        findViewById(R.id.button_shop).setOnClickListener(v -> notYetBuilt(R.string.action_shop));
-        findViewById(R.id.button_daily).setOnClickListener(v -> notYetBuilt(R.string.action_daily_reward));
+        findViewById(R.id.button_settings).setOnClickListener(v ->
+                startActivity(new Intent(this, SettingsActivity.class)));
+        findViewById(R.id.button_shop).setOnClickListener(v ->
+                startActivity(new Intent(this, ShopActivity.class)));
+        findViewById(R.id.button_daily).setOnClickListener(v ->
+                startActivity(new Intent(this, DailyRewardActivity.class)));
     }
 
     @Override
@@ -57,7 +59,4 @@ public class HomeActivity extends AppCompatActivity {
         startActivity(i);
     }
 
-    private void notYetBuilt(int labelRes) {
-        Toast.makeText(this, getString(labelRes) + " — coming soon", Toast.LENGTH_SHORT).show();
-    }
 }

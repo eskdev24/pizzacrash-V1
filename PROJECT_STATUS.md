@@ -67,3 +67,14 @@ Then STOP and wait for the first UI reference image (expected: home/splash scree
 - HomeActivity rewired: PLAY -> WorldMap (with press animation); shortcuts toast "coming soon"
   until their approved screens exist. Coin balance live from SaveRepository.
 - Build: ./gradlew assembleDebug PASSED. Runtime not verified (no emulator in this environment).
+
+## 2026-10-21 — Batch: World Map, Level Intro, Settings, Shop, Daily Rewards
+- WorldMapActivity rebuilt as the reusable map for all 10 worlds (banner, star progress x/60, gift button, prev/next world nav, auto-scroll to frontier). 20 level nodes per world added programmatically via LevelNodeBuilder with locked/unlocked/current/completed states + 3-star indicators; locked nodes are not startable.
+- LevelIntroActivity (level.png): shows local level number, world name, best score; Play is an honest stub toast until Phase 3 board.
+- SettingsActivity (settings.png): sound/music/haptics MaterialSwitch toggles persisted in SaveRepository; total stars + coin stats panel.
+- ShopActivity (shop.png): coin-only booster purchases (Hammer/Bomb/Swap/Rainbow/Starter Pack) with insufficient-balance guard; no real-money IAP.
+- DailyRewardActivity (dailyreward.png): once-per-calendar-day claim (+50 coins), streak counter, hammer every 3rd day; duplicate-claim guard.
+- SaveRepository: added daily_last_claim / daily_streak keys and accessors.
+- Home buttons now navigate to Settings/Shop/Daily instead of "coming soon" toasts.
+- New drawables: node state backgrounds, lock/star icons, world banner, round button bg. Manifest: 4 new activities registered.
+- Build: ./gradlew assembleDebug PASSED. Runtime/emulator verification NOT performed (no emulator in this environment).

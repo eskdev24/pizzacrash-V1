@@ -35,6 +35,30 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.PizzaCrash" />
 
+        <activity
+            android:name=".ui.LevelIntroActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.PizzaCrash" />
+
+        <activity
+            android:name=".ui.SettingsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.PizzaCrash" />
+
+        <activity
+            android:name=".ui.ShopActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.PizzaCrash" />
+
+        <activity
+            android:name=".ui.DailyRewardActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.PizzaCrash" />
+
         <!-- Original template screen, preserved (no longer the launcher) -->
         <activity
             android:name=".MainActivity"

@@ -23,6 +23,8 @@ public final class SaveRepository {
     private static final String KEY_STARS_PREFIX = "stars_";      // + levelId
     private static final String KEY_BEST_PREFIX = "best_";        // + levelId
     private static final String KEY_BOOSTER_PREFIX = "booster_";  // + boosterId
+    private static final String KEY_DAILY_LAST_CLAIM = "daily_last_claim";
+    private static final String KEY_DAILY_STREAK = "daily_streak";
 
     /** Current save schema version; bump when migrating. */
     private static final int SAVE_VERSION = 1;
@@ -176,4 +178,24 @@ public final class SaveRepository {
     public void setSoundEnabled(boolean v) { prefs.edit().putBoolean(KEY_SOUND, v).apply(); }
     public void setMusicEnabled(boolean v) { prefs.edit().putBoolean(KEY_MUSIC, v).apply(); }
     public void setHapticsEnabled(boolean v) { prefs.edit().putBoolean(KEY_HAPTICS, v).apply(); }
+
+    // ---------- Daily reward ----------
+
+    /** Timestamp (millis) of the last daily-reward claim; 0 = never claimed. */
+    public long getLastDailyClaimMillis() {
+        return prefs.getLong(KEY_DAILY_LAST_CLAIM, 0L);
+    }
+
+    public void setLastDailyClaimMillis(long millis) {
+        prefs.edit().putLong(KEY_DAILY_LAST_CLAIM, millis).apply();
+    }
+
+    /** Consecutive-day claim streak (>=1 once claimed at least once). */
+    public int getDailyStreak() {
+        return prefs.getInt(KEY_DAILY_STREAK, 0);
+    }
+
+    public void setDailyStreak(int streak) {
+        prefs.edit().putInt(KEY_DAILY_STREAK, Math.max(0, streak)).apply();
+    }
 }

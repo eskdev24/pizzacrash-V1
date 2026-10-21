@@ -27,4 +27,44 @@
     <string name="action_daily_reward">Daily reward</string>
     <string name="action_settings">Settings</string>
     <string name="cd_coins">Coin balance</string>
+
+    <!-- World map -->
+    <string name="action_prev_world">◀ Prev world</string>
+    <string name="action_next_world">Next world ▶</string>
+    <string name="label_star_progress">%1$d / %2$d stars</string>
+    <string name="cd_level_node">Level %1$d of World %2$d</string>
+    <string name="label_locked">Locked</string>
+
+    <!-- Level intro -->
+    <string name="label_best_score">Best score: %1$d</string>
+    <string name="label_objective_pending">Objective details arrive with the gameplay board (Phase 3)</string>
+    <string name="toast_level_locked">This level is still locked</string>
+    <string name="toast_gameplay_pending">Gameplay board arrives in Phase 3 — not built yet</string>
+
+    <!-- Settings -->
+    <string name="title_settings">Settings</string>
+    <string name="title_your_progress">Your progress</string>
+    <string name="label_sound_effects">Sound effects</string>
+    <string name="label_music">Music</string>
+    <string name="label_haptics">Vibration</string>
+    <string name="label_version">PizzaCrash v0.1 (development build)</string>
+
+    <!-- Shop -->
+    <string name="title_shop">Shop</string>
+    <string name="booster_hammer">Hammer</string>
+    <string name="booster_bomb">Bomb</string>
+    <string name="booster_swap">Swap</string>
+    <string name="booster_rainbow">Rainbow</string>
+    <string name="shop_starter_pack">Starter Pack (Hammer + Bomb + Swap)</string>
+    <string name="label_buy_item">%1$s — %2$d coins</string>
+    <string name="toast_not_enough_coins">Not enough coins!</string>
+    <string name="toast_purchase_ok">Purchase complete!</string>
+
+    <!-- Daily reward -->
+    <string name="title_daily_reward">Daily Reward</string>
+    <string name="label_daily_reward_desc">Claim 50 coins every day. Every 3-day streak also grants a Hammer booster.</string>
+    <string name="label_streak">Streak: %1$d day(s)</string>
+    <string name="action_claim">Claim reward</string>
+    <string name="action_claimed_today">Claimed today</string>
+    <string name="toast_daily_claimed">Reward claimed! +50 coins</string>
 </resources>

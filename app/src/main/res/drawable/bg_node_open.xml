@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Playable level node: white circle with golden ring and depth shadow. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="@color/crust_gold_dark" />
+        </shape>
+    </item>
+    <item bottom="3dp" right="2dp">
+        <shape android:shape="oval">
+            <solid android:color="@color/panel_bg" />
+            <stroke android:width="3dp" android:color="@color/crust_gold" />
+        </shape>
+    </item>
+</layer-list>
